@@ -14,7 +14,7 @@ sudo service nginx start
 sudo mkdir -p /data/web_static/releases/test/
 sudo mkdir -p /data/web_static/shared/
 
-#Creating file and writing cntent in file
+#Creating file with content & make symbolic link
 sudo echo "This file is so fake" | sudo tee /data/web_static/releases/test/index.html
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 
