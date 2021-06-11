@@ -7,6 +7,7 @@ sudo apt-get -y upgrade
 
 #Installing nginx
 sudo apt-get -y install nginx
+sudo apt-get -y update 
 sudo service nginx start
 
 #Making directories
