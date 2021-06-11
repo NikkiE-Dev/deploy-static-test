@@ -18,7 +18,7 @@ sudo mkdir -p /data/web_static/shared/
 sudo echo "This file is so fake" | sudo tee /data/web_static/releases/test/index.html
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 
-#Giving ownership to specific user
+#Giving ownership to a specific user
 sudo chown ubuntu:ubuntu -hR /data
 
 #Edit nginx config file

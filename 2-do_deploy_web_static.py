@@ -11,7 +11,6 @@ env.hosts = ['3.80.127.172', '54.86.53.211']
 def do_deploy(archive_path):
     """Deploy an archive"""
 
-    
     if not os.path.exists(archive_path):
         return False
     
@@ -30,15 +29,20 @@ def do_deploy(archive_path):
         return True
     except:
         return False
+
 def do_pack():
     """ Pack up web_static dir """
 
-    now = datetime.now()
+    try:
+        now = datetime.now()
 
-    tarArchiveName = "web_static_" + now.strftime("%Y%m%d%H%M%S") + ".tgz"
-    tarArchivePath = "versions/" + tarArchiveName
+        tarArchiveName = "web_static_" + now.strftime("%Y%m%d%H%M%S") + ".tgz"
+        tarArchivePath = "versions/" + tarArchiveName
 
-    local("mkdir -p versions")
+        local("mkdir -p versions")
+        local("tar -czvf " + tarArchivePath + " web_static")
 
-    local("tar -czvf " + tarArchivePath + " web_static")  
+        return tarArchivePath
 
+    except:
+        return None
