@@ -16,7 +16,7 @@ sudo mkdir -p /data/web_static/shared/
 
 #Creating file and writing cntent in file
 sudo echo "This file is so fake" | sudo tee /data/web_static/releases/test/index.html
-sudo ln -sfn /data/web_static/releases/test/ /data/web_static/current
+sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 
 #Giving ownership to specific user
 sudo chown ubuntu:ubuntu -hR /data
