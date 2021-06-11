@@ -3,7 +3,8 @@
 
 from fabric.api import local, env, put, run
 from datetime import datetime
-ipmort os.path
+import os.path
+
 
 env.hosts = ['3.80.127.172', '54.86.53.211']
 
