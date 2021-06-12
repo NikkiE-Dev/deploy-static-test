@@ -4,6 +4,7 @@
 from fabric.api import local
 from datetime import datetime
 
+
 def do_pack():
     """ Pack up web_static dir """
 
@@ -20,5 +21,3 @@ def do_pack():
 
     except:
         return None
-
-    
