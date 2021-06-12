@@ -19,14 +19,14 @@ def do_deploy(archive_path):
         archiveName = archive_path[9:]
         archiveNameNoExt = archiveName[:-4]
 
-        put(archive_path, '/tmp/test.tmp')
+        put(archive_path, '/tmp/' + archiveName) 
         run("mkdir -p /data/web_static/releases/" + archiveNameNoExt)
         run("tar -xzvf /tmp/" + archiveName + " -C " +
             "/data/web_static/releases/" +
-            archiveNameNoExt + " --strip--components=1")
+            archiveNameNoExt + " --strip-components=1")
         run("rm -f /tmp/" + archiveName)
         run("rm -f /data/web_static/current")
-        run("rm -sf /data/web_static/releases" +
+        run("rm -rf /data/web_static/releases" +
             archiveNameNoExt + " /data/web_static/current")
         run("ln -sf /data/web_static/releases/" + archiveNameNoExt)
 
