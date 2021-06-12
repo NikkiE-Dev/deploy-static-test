@@ -37,7 +37,8 @@ def do_deploy(archive_path):
         run("rm -f /data/web_static/current")
         run("rm -rf /data/web_static/releases" +
             archiveNameNoExt + " /data/web_static/current")
-        run("ln -sf /data/web_static/releases/" + archiveNameNoExt)
+        run("sudo ln -sf /data/web_static/releases/" + archiveNameNoExt
+            + " /data/web_static/current")
 
         return True
     except:
